@@ -5,7 +5,6 @@ const checkUserAgreement = (id, chatId, db, bot) => {
         return
     }
 
-    bot.sendMessage(chatId, 'BAN')
     delete db[id.toString()]
 }
 

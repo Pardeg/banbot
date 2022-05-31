@@ -2,11 +2,12 @@ const {checkUserAgreement} = require("../utils/utils");
 
 class AdminService {
     async checkUserAnswer(bot, answ, db) {
-        if (answ.from.id === answ.message.reply_to_message.from.id && answ.data === '1') {
+
+        if (answ.from.id === answ.message.reply_to_message.new_chat_member.id && answ.data === '1') {
             db[answ.from.id] = true
-            console.log(db)
+
         }
-        bot.sendMessage(answ.message.chat.id, "OkOK")
+
     }
 
     checkNewUser(bot, msg, db, userId) {
